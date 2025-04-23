@@ -12,7 +12,7 @@ package main.java.jdbc;
       +) SQL 스키마, Java 프로젝트
  */
 
-// === 자주 발생하는 오류 & 해결법 ===
+// === JDBC 연결 시 자주 발생하는 오류 & 해결법 ===
 // 1. ClassNotFoundException
 // : 외부 라이브러리(sql connector)가 프로젝트에 추가되지 않음
 

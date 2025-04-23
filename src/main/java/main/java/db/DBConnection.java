@@ -14,7 +14,7 @@ public class DBConnection {
     // DB 사용자 이름 / 비밀번호 상수로 선언
     // +) DB 접속 시 사용할 사용자 계정 이름 / 비밀번호
     private static final String USER = "root";
-    private static final String PASSWORD = "kohj0686";
+    private static final String PASSWORD = "kohj5004";
 
     // === DB 연결 상태를 반환 ===
     // : SQL 관련 에러 발생을 방지

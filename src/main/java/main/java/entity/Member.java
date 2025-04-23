@@ -1,9 +1,6 @@
 package main.java.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 // Entity
 // : 데이터베이스 테이블과 매핑되는 클래스
@@ -18,6 +15,10 @@ import lombok.ToString;
 //    3) Enable annotation
 
 @AllArgsConstructor
+@NoArgsConstructor
+// : JDBC 또는 ORM (DB와 JAVA를 객체화하여 연동하는 체계)에서는
+//   , 빈 객체를 먼저 만들고 setter로 값을 넣는 방식을 사용
+// >> 따라서 AllArgsConstructor도 NoArgsConstructor가 전제되어야 함 (기본 + 전체 필드 생성자)
 @Getter
 @Setter
 @ToString

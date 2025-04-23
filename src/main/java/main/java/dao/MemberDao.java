@@ -30,19 +30,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-// Member 클래스
+// MemberDao 클래스
 // : Member 테이블에 대한 CRUD 작업을 처리
 public class MemberDao {
     // 1. Read(단건): 아이디(id)를 기준으로 사용자 정보를 가져오는 메서드
-    public Member getMemberBYId(int id) throws SQLException {
-        // get + 사요자 정보 + By + 찾고자 하는 컬럼명
+    public Member getMemberById(int id) throws SQLException {
+        // +) get + 사요자 정보 + By + 찾고자 하는 컬럼명
 
         // DBConnection을 통해 DB 연경을 자져모
         Connection conn = DBConnection.getConnection(); // static 메서드: 클래스명으로 호출
 
         // 실행할 SQL문 작성
         // : id를 조건으로 사용 정보 조회 (동적 파라미터)
-        String sql = "SELECT * FROM meber WHERE id = ?";
+        String sql = "SELECT * FROM member WHERE id = ?";
 
         // SQL 쿠리 실행
         PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -57,7 +57,8 @@ public class MemberDao {
         if (rs.next()) { // 결과 집합에 다음 행이 있으면 true 반환
 
             // Member 객체 생성 >> 결과 저장
-            member = new Member(rs.getInt("id"),
+            member = new Member(
+                    rs.getInt("id"),
                     rs.getString("name"),
                     rs.getString("email"));
         }
@@ -112,7 +113,7 @@ public class MemberDao {
         PreparedStatement pstmt = conn.prepareStatement(sql);
 
         pstmt.setString(1, member.getName());
-        pstmt.setString(1, member.getEmail());
+        pstmt.setString(2, member.getEmail());
 
         pstmt.executeUpdate();
 
